@@ -14,6 +14,8 @@ from pathlib import Path
 import django_heroku
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 from django.urls import reverse_lazy
+import os
+
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -133,7 +135,6 @@ STATIC_ROOT = BASE_DIR / 'static'
 STATICFILES_DIRS = [
     BASE_DIR / 'assets',
 ]
-
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'

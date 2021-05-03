@@ -13,11 +13,12 @@
       crossorigin="anonymous"
     />
 
-    <link rel="stylesheet" href="{% static 'CSS/style.css' %}" />
+    <link rel="stylesheet" href="{% static 'CSS/style2.css' %}" />
+    {% block extra_css %} {% endblock %}
   </head>
   <body>
     <header class="header">
-      <div class="{% block header_container_class %}container-xl{% endblock %}">
+      <div class="container-xl {% block header_container_class %} {% endblock %}">
         <a href="{% url 'profile' %}" class="header__profile">
           <img
             class="header__profile__img"

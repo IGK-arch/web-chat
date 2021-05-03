@@ -1,19 +1,21 @@
+
 {% extends 'base.html' %}
 {% load static %}
 
 {% block extra_css %}
-    <link rel="stylesheet" href="{% static 'CSS/section.css' %}"/>
+    <link rel="stylesheet" href="{% static 'CSS/chat/section2.css' %}" />
 {% endblock %}
 
 {% block header_container_class %}container-fluid{% endblock %}
 
 {%block main %}
     <div class="section-container">
-        <div class="section-container__left">
-            {% for conversation in conversations %}
-            <a href="?conversation={{ conversation.id }}">{{ conversation }} </a> <br>
-            {% endfor %}
-
+        <div class="section-container__common section-container__left">
+            <div class="message-list">
+                {% for conversation in conversations %}
+                <a href="?conversation={{ conversation.id }}">{{ conversation }} </a> <br>
+                {% endfor %}
+            </div>
             <form method="post">
                 {% csrf_token %}
                 <input type="hidden" name="form" value="conversation">
@@ -22,11 +24,13 @@
             </form>
         </div>
 
-        <div class="section-container__right" >
+        <div class="section-container__common section-container__right" >
             {% if conversation_id %}
-                {% for message in messages %}
-                    {{ message }}</br>
-                {% endfor %}
+                 <div class="message-list">
+                    {% for message in messages %}
+                        {{ message }}</br>
+                    {% endfor %}
+                 </div>
                 <form method="post" action="">
                     {% csrf_token %}
                     <input type="hidden" name="form" value="message">
