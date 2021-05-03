@@ -3,7 +3,7 @@
 {% load static %}
 
 {% block extra_css %}
-    <link rel="stylesheet" href="{% static 'CSS/chat/section2.css' %}" />
+    <link rel="stylesheet" href="{% static 'CSS/chat/section.css' %}" />
 {% endblock %}
 
 {% block header_container_class %}container-fluid{% endblock %}
@@ -31,7 +31,7 @@
                         {{ message }}</br>
                     {% endfor %}
                  </div>
-                <form method="post" action="">
+                <form method="post">
                     {% csrf_token %}
                     <input type="hidden" name="form" value="message">
                     {{ message_form }}
