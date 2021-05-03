@@ -4,7 +4,7 @@ body{
     flex-direction: column;
 }
 .header {
-    background-color: rgba(70,26,105,0.67);
+    background-color: rgba(1,26,105,0.67);
 }
 
 .header> div{
@@ -94,3 +94,4 @@ body{
   max-height: 200px;
   margin-top: 20px;
 }
+
