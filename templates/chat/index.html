@@ -2,20 +2,27 @@
 
 {% load static %}
 
-{% block main %}
-  <div class="main">
-    <div class="container-xl">
-      {% for section in sections %}
-        {% url 'section' section.id as link %}
-        {% if section.image %}
-          {% include 'chat/section_card.html' with image_url=section.image.url name=section.title image_alt=section.title %}
-        {% else %}
-          {% include 'chat/section_card.html' with image_url=None name=section.title image_alt=section.title %}
-        {% endif %}
-      {% endfor %}
+{% block extra_css %}
+  <link rel="stylesheet" href="{% static 'CSS/index3.css' %}"/>
+{% endblock %}
 
-      <div class="main__section main__section-hidden"></div>
-      <div class="main__section main__section-hidden"></div>
+{% block main %}
+    <div class="main" >
+      <div class="welcome container-xxl">
+        <p >Forum for comunications <br>Welcome to my website!) Here you can chat with other users or create your own dialogue where you want to discuss a topic. Invite your friends and chat!</p>
+      </div>
+      <div class="container-xl">
+        {% for section in sections %}
+          {% url 'section' section.id as link %}
+          {% if section.image %}
+            {% include 'chat/section_card.html' with image_url=section.image.url name=section.title image_alt=section.title %}
+          {% else %}
+            {% include 'chat/section_card.html' with image_url=None name=section.title image_alt=section.title %}
+          {% endif %}
+        {% endfor %}
+
+        <div class="main__section main__section-hidden"></div>
+        <div class="main__section main__section-hidden"></div>
+      </div>
     </div>
-  </div>
 {% endblock %}

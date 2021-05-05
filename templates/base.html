@@ -1,11 +1,11 @@
 {% load static %}
-
+{% load gravatar %}
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Best chat</title>
-
+  </style>
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
@@ -13,8 +13,9 @@
       crossorigin="anonymous"
     />
 
-    <link rel="stylesheet" href="{% static 'CSS/style.css' %}" />
+    <link rel="stylesheet" href="{% static 'CSS/style3.css' %}" />
     {% block extra_css %} {% endblock %}
+    {% block extra_head %} {% endblock %}
   </head>
   <body>
     <header class="header">
@@ -22,7 +23,7 @@
         <a href="{% url 'profile' %}" class="header__profile">
           <img
             class="header__profile__img"
-            src="{% if user.avatar %}{{ user.avatar.url }}{% else %}{% static 'images/user.svg' %}{% endif %}"
+            src="{% if user.avatar %}{{ user.avatar.url }}{% elif user.email %}{% gravatar_url user.email 50 %}{% else %}{% static 'images/user.svg' %}{% endif %}"
             alt="userpic"
           />
           <span class="header__profile__bio">{{user.first_name}} {{ user.last_name }}</span>
@@ -31,6 +32,8 @@
         <div class="header__controls">
             <a class="header__controls__link" href="{% url 'index' %}">Главная</a>
             <a class="header__controls__link" href="{% url 'logout' %}">Выйти</a>
+            {%if user.is_anonymous %}<a class="header__controls__link" href="{% url 'django_registration_register' %}">Регистрация</a>{% endif %}
+            {%if user.is_anonymous %}<a class="header__controls__link" href="{% url 'login' %}">Войти</a>{% endif %}
         </div>
       </div>
     </header>
