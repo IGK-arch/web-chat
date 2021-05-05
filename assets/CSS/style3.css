@@ -4,7 +4,7 @@ body{
     flex-direction: column;
 }
 .header {
-    background-color: rgba(1,26,105,0.67);
+    background-color: #2e318c;
 }
 
 .header> div{
@@ -29,6 +29,7 @@ body{
 .header__profile__bio{
     font-size: 18px;
     color:white;
+    text-decoration: none
 }
 
 .header__controls{
@@ -52,7 +53,7 @@ body{
     border-color: white;
 }
 .main{
-    background: rgba(197, 142, 241, 0.13);
+    background: white;
     flex-grow: 1;
 }
 .main > div{
