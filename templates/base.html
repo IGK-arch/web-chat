@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Best chat</title>
-  </style>
+    </style>
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
@@ -33,7 +33,6 @@
             <a class="header__controls__link" href="{% url 'index' %}">Главная</a>
             <a class="header__controls__link" href="{% url 'logout' %}">Выйти</a>
             {%if user.is_anonymous %}<a class="header__controls__link" href="{% url 'django_registration_register' %}">Регистрация</a>{% endif %}
-            {%if user.is_anonymous %}<a class="header__controls__link" href="{% url 'login' %}">Войти</a>{% endif %}
         </div>
       </div>
     </header>

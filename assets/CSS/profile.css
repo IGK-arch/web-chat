@@ -1,15 +1,22 @@
+.main-profile {
+    flex-grow: 1;
+    background: url('https://www.teahub.io/photos/full/288-2886307_sunset-gif.gif');
+    background-size: cover;
+}
+
 .title-row {
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 32px;
-  color: rgba(76, 79, 168, 0.84);
+  color: #052956;
   margin: 15px 0;
 }
 
+
 .separator {
   margin: 0;
-  background-color: #494b91;
+  background-color: #052956;
 }
 
 .profile-form {
@@ -33,14 +40,14 @@
 
 .form-label {
   font-size: 20px;
-  color: #;
+  color: #052956;
   margin: 10px 20px;
   width: 100%;
 }
 
 .form-block {
   display: flex;
-  background-color: rgba(101, 105, 207, 0.43);
+  background-color: rgb(159 161 210 / 43%);
   border: none;
   border-radius: 20px;
   font-size: 18px;
@@ -54,8 +61,8 @@
 
 .form-button {
   font-size: 24px;
-  color: #FFFFFF;
-  background: #585bb0;
+  color: #052956;
+  background: rgb(159 161 210 / 43%);
   border-radius: 30px;
   border: none;
   padding: 6px 30px;
